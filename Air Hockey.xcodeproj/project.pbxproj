@@ -279,7 +279,12 @@
 		B6252F3A17E5932900AAF3BC /* cpVect.c in Sources */ = {isa = PBXBuildFile; fileRef = B6252F3917E5932900AAF3BC /* cpVect.c */; };
 		B6252F4217E5932900AAF3BC /* libwebsockets.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B6252F4117E5932900AAF3BC /* libwebsockets.a */; };
 		B6252F4817E5932900AAF3BC /* AppDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B6252F4717E5932900AAF3BC /* AppDelegate.cpp */; };
-		B6252F4B17E5932900AAF3BC /* HelloWorldScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B6252F4A17E5932900AAF3BC /* HelloWorldScene.cpp */; };
+		B6252F4B17E5932900AAF3BC /* GameLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B6252F4A17E5932900AAF3BC /* GameLayer.cpp */; };
+		B6252F7E17E59A2900AAF3BC /* hd in Resources */ = {isa = PBXBuildFile; fileRef = B6252F7C17E59A2900AAF3BC /* hd */; };
+		B6252F7F17E59A2900AAF3BC /* sd in Resources */ = {isa = PBXBuildFile; fileRef = B6252F7D17E59A2900AAF3BC /* sd */; };
+		B6252F8217E5A25100AAF3BC /* hit.wav in Resources */ = {isa = PBXBuildFile; fileRef = B6252F8017E5A25100AAF3BC /* hit.wav */; };
+		B6252F8317E5A25100AAF3BC /* score.wav in Resources */ = {isa = PBXBuildFile; fileRef = B6252F8117E5A25100AAF3BC /* score.wav */; };
+		B6252F8617E5A35400AAF3BC /* GameSprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B6252F8417E5A35400AAF3BC /* GameSprite.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -871,8 +876,14 @@
 		B6252F4417E5932900AAF3BC /* Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Prefix.pch; sourceTree = "<group>"; };
 		B6252F4617E5932900AAF3BC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = Classes/AppDelegate.h; sourceTree = "<group>"; };
 		B6252F4717E5932900AAF3BC /* AppDelegate.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = AppDelegate.cpp; path = Classes/AppDelegate.cpp; sourceTree = "<group>"; };
-		B6252F4917E5932900AAF3BC /* HelloWorldScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = HelloWorldScene.h; path = Classes/HelloWorldScene.h; sourceTree = "<group>"; };
-		B6252F4A17E5932900AAF3BC /* HelloWorldScene.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = HelloWorldScene.cpp; path = Classes/HelloWorldScene.cpp; sourceTree = "<group>"; };
+		B6252F4917E5932900AAF3BC /* GameLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = GameLayer.h; path = Classes/GameLayer.h; sourceTree = "<group>"; };
+		B6252F4A17E5932900AAF3BC /* GameLayer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = GameLayer.cpp; path = Classes/GameLayer.cpp; sourceTree = "<group>"; };
+		B6252F7C17E59A2900AAF3BC /* hd */ = {isa = PBXFileReference; lastKnownFileType = folder; name = hd; path = Resources/hd; sourceTree = "<group>"; };
+		B6252F7D17E59A2900AAF3BC /* sd */ = {isa = PBXFileReference; lastKnownFileType = folder; name = sd; path = Resources/sd; sourceTree = "<group>"; };
+		B6252F8017E5A25100AAF3BC /* hit.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = hit.wav; path = Resources/hit.wav; sourceTree = "<group>"; };
+		B6252F8117E5A25100AAF3BC /* score.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = score.wav; path = Resources/score.wav; sourceTree = "<group>"; };
+		B6252F8417E5A35400AAF3BC /* GameSprite.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameSprite.cpp; sourceTree = "<group>"; };
+		B6252F8517E5A35400AAF3BC /* GameSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameSprite.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -944,6 +955,10 @@
 		B6252BB517E5932400AAF3BC /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				B6252F8017E5A25100AAF3BC /* hit.wav */,
+				B6252F8117E5A25100AAF3BC /* score.wav */,
+				B6252F7C17E59A2900AAF3BC /* hd */,
+				B6252F7D17E59A2900AAF3BC /* sd */,
 				B6252BB617E5932400AAF3BC /* CloseNormal.png */,
 				B6252BB817E5932400AAF3BC /* CloseSelected.png */,
 				B6252BBA17E5932400AAF3BC /* Default.png */,
@@ -2095,8 +2110,10 @@
 			children = (
 				B6252F4617E5932900AAF3BC /* AppDelegate.h */,
 				B6252F4717E5932900AAF3BC /* AppDelegate.cpp */,
-				B6252F4917E5932900AAF3BC /* HelloWorldScene.h */,
-				B6252F4A17E5932900AAF3BC /* HelloWorldScene.cpp */,
+				B6252F4917E5932900AAF3BC /* GameLayer.h */,
+				B6252F4A17E5932900AAF3BC /* GameLayer.cpp */,
+				B6252F8417E5A35400AAF3BC /* GameSprite.cpp */,
+				B6252F8517E5A35400AAF3BC /* GameSprite.h */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -2164,6 +2181,10 @@
 				B6252BCB17E5932400AAF3BC /* iTunesArtwork in Resources */,
 				B6252C6A17E5932500AAF3BC /* ChangeLog in Resources */,
 				B6252DDE17E5932700AAF3BC /* project.pbxproj in Resources */,
+				B6252F7E17E59A2900AAF3BC /* hd in Resources */,
+				B6252F7F17E59A2900AAF3BC /* sd in Resources */,
+				B6252F8217E5A25100AAF3BC /* hit.wav in Resources */,
+				B6252F8317E5A25100AAF3BC /* score.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2422,7 +2443,8 @@
 				B6252F3817E5932900AAF3BC /* cpSweep1D.c in Sources */,
 				B6252F3A17E5932900AAF3BC /* cpVect.c in Sources */,
 				B6252F4817E5932900AAF3BC /* AppDelegate.cpp in Sources */,
-				B6252F4B17E5932900AAF3BC /* HelloWorldScene.cpp in Sources */,
+				B6252F4B17E5932900AAF3BC /* GameLayer.cpp in Sources */,
+				B6252F8617E5A35400AAF3BC /* GameSprite.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2513,6 +2535,7 @@
 					"-websockets",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 2;
 				USER_HEADER_SEARCH_PATHS = "\"Air Hockey/libs/Chipmunk/include/chipmunk\"";
 				WRAPPER_EXTENSION = app;
 			};
@@ -2539,6 +2562,7 @@
 					"-websockets",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 2;
 				USER_HEADER_SEARCH_PATHS = "\"Air Hockey/libs/Chipmunk/include/chipmunk\"";
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
@@ -2564,6 +2588,7 @@
 				B6252F5017E5932900AAF3BC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -10,7 +10,7 @@
 
 #include "cocos2d.h"
 #include "SimpleAudioEngine.h"
-#include "HelloWorldScene.h"
+#include "GameLayer.h"
 
 USING_NS_CC;
 using namespace CocosDenshion;
@@ -28,8 +28,28 @@ bool AppDelegate::applicationDidFinishLaunching()
 {
     // initialize director
     CCDirector *pDirector = CCDirector::sharedDirector();
+    //pDirector->setOpenGLView(CCEGLView::sharedOpenGLView());
+    
     pDirector->setOpenGLView(CCEGLView::sharedOpenGLView());
+    
+    CCSize screenSize = pDirector->getWinSize();
+    CCLOG("%f %f", screenSize.width, screenSize.height);
+    //CCSize screenSize = pEGLView->getFrameSize();
+    //CCEGLView::sharedOpenGLView() -> setDesignResolutionSize(768, 1024, kResolutionExactFit);
+    if (screenSize.width > 768) {
+        CCLOG("hd");
+        CCFileUtils::sharedFileUtils()->addSearchPath("hd");
+        pDirector->setContentScaleFactor(2);
+    } else {
+        CCLOG("SD");
+        //or else, use standard definition
+        CCFileUtils::sharedFileUtils()->addSearchPath("sd");
+        pDirector->setContentScaleFactor(1);
+    }
 
+    SimpleAudioEngine::sharedEngine()->preloadEffect(CCFileUtils::sharedFileUtils()->fullPathForFilename("hit.wav").c_str());
+    SimpleAudioEngine::sharedEngine()->preloadEffect(CCFileUtils::sharedFileUtils()->fullPathForFilename("score.wav").c_str());
+AVAudioSession
     // turn on display FPS
     pDirector->setDisplayStats(true);
 
@@ -37,7 +57,7 @@ bool AppDelegate::applicationDidFinishLaunching()
     pDirector->setAnimationInterval(1.0 / 60);
 
     // create a scene. it's an autorelease object
-    CCScene *pScene = HelloWorld::scene();
+    CCScene *pScene = GameLayer::scene();
 
     // run
     pDirector->runWithScene(pScene);
